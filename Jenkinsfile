@@ -31,7 +31,7 @@ pipeline {
             }
         }
     }
-
+echo 'Testing automatic branch build'
     post {
         success {
             echo 'Build success 1'
