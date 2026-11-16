@@ -26,11 +26,6 @@ pipeline {
                     env.BRANCH_NAME?.contains('release')
                 }
             }
-            stage('PR Change Demo') {
-    steps {
-        echo 'Testing a new change through Pull Request'
-    }
-}
             steps {
                 echo "Its an release branch and will start deploy the war to tomcat"
             }
