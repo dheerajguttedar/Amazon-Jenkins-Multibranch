@@ -53,5 +53,5 @@ echo 'Testing automatic branch build'
 
   }
 
-
+    }
 }
