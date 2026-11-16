@@ -40,5 +40,18 @@ echo 'Testing automatic branch build'
         failure {
             echo 'Failure in the build'
         }
-    }
+ 
+  post{
+
+  success{
+     echo 'Build success '
+  }
+    
+  failure{
+       echo 'Failure in the build'
+   }
+
+  }
+
+
 }
