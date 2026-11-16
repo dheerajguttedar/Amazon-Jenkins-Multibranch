@@ -1,57 +1,26 @@
-
 pipeline {
     agent any
 
-    environment {
-        PATH = "/usr/bin:/bin:/opt/homebrew/bin"
-    }
-
     stages {
-
-        stage('compile stages') {
+        stage('Build') {
             steps {
-                sh 'mvn compile'
+                echo 'Building application'
             }
         }
 
-        stage('build') {
+        stage('Testing') {
             steps {
-                sh 'mvn clean install'
-            }
-        }
-
-        stage('Deploy') {
-            when {
-                expression {
-                    env.BRANCH_NAME?.contains('release')
-                }
-            }
-            steps {
-                echo "Its an release branch and will start deploy the war to tomcat"
+                echo 'Testing automatic branch build'
             }
         }
     }
-echo 'Testing automatic branch build'
+
     post {
         success {
-            echo 'Build success 1'
+            echo 'Build success'
         }
-
         failure {
             echo 'Failure in the build'
         }
- 
-  post{
-
-  success{
-     echo 'Build success '
-  }
-    
-  failure{
-       echo 'Failure in the build'
-   }
-
-  }
-
     }
 }
